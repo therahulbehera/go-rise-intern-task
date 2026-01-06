@@ -30,7 +30,7 @@ const Product = ({ prodId }: { prodId: string }) => {
       data?.data;
 
     return (
-      <section className="flex flex-col md:flex-row justify-center items-center gap-4 m-4">
+      <section className="w-9/12 flex flex-col md:flex-row justify-center items-center gap-4 m-auto py-8">
         <div className="w-full h-full">
           <span className="text-xl w-full md:hidden">{name}</span>
           <Image
@@ -39,14 +39,14 @@ const Product = ({ prodId }: { prodId: string }) => {
             width={400}
             height={400}
             unoptimized
-            className="w-full"
+            className="w-full h-auto"
           />
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 grow">
           <span className="text-4xl">₹{price}</span>
           <span className="text-justify">{description}</span>
           <div></div>
-          <table className="table-fixed w-full border ">
+          <table className="table-auto w-full border ">
             <tbody>
               <tr>
                 <td className="border p-2">Category</td>

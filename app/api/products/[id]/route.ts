@@ -10,8 +10,6 @@ export async function GET(
   const data = products.find((product) => product.id == id && product);
 
   return NextResponse.json({
-    status: 200,
-    message: `Successfully fetched product id ${id}`,
     data,
   });
 }

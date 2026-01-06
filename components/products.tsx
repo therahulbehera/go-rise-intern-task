@@ -12,7 +12,8 @@ const Products = () => {
     queryKey: ["products"],
     queryFn: async () => {
       const res = await fetch("/api/products");
-      return await res.json();
+      if (!res.ok) throw new Error("Fetch failed");
+      return res.json();
     },
     staleTime: 5 * 60 * 1000,
   });
@@ -24,10 +25,10 @@ const Products = () => {
       </>
     );
 
-  if (isFetched && data.status == 200)
+  if (isFetched)
     return (
       <>
-        {data?.data?.map((product: Product) => (
+        {data?.products?.map((product: Product) => (
           <Link href={`/products/${product.id}`} key={product.id}>
             <Card
               name={product.name}

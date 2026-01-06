@@ -5,7 +5,7 @@ export const products = [
     category: "Ring",
     price: 24999,
     currency: "INR",
-    image: "/images/ring-1.jpg",
+    image: "https://placehold.co/400",
     metal: ["Gold", "Rose Gold"],
     variants: ["Size 6", "Size 7", "Size 8"],
     description:
@@ -18,7 +18,7 @@ export const products = [
     category: "Necklace",
     price: 8999,
     currency: "INR",
-    image: "/images/necklace-1.jpg",
+    image: "https://placehold.co/400",
     metal: ["Silver"],
     variants: ["16 inch", "18 inch"],
     description:
@@ -31,7 +31,7 @@ export const products = [
     category: "Earrings",
     price: 17999,
     currency: "INR",
-    image: "/images/earrings-1.jpg",
+    image: "https://placehold.co/400",
     metal: ["Gold", "White Gold"],
     variants: ["3mm", "4mm"],
     description:
@@ -44,7 +44,7 @@ export const products = [
     category: "Bracelet",
     price: 11999,
     currency: "INR",
-    image: "/images/bracelet-1.jpg",
+    image: "https://placehold.co/400",
     metal: ["Silver"],
     variants: ["Small", "Medium", "Large"],
     description:
@@ -57,7 +57,7 @@ export const products = [
     category: "Ring",
     price: 15999,
     currency: "INR",
-    image: "/images/ring-2.jpg",
+    image: "https://placehold.co/400",
     metal: ["Rose Gold"],
     variants: ["Size 6", "Size 7", "Size 8"],
     description:
@@ -70,7 +70,7 @@ export const products = [
     category: "Earrings",
     price: 21999,
     currency: "INR",
-    image: "/images/earrings-2.jpg",
+    image: "https://placehold.co/400",
     metal: ["Gold"],
     variants: ["Standard"],
     description:
@@ -83,7 +83,7 @@ export const products = [
     category: "Necklace",
     price: 12999,
     currency: "INR",
-    image: "/images/necklace-2.jpg",
+    image: "https://placehold.co/400",
     metal: ["Gold"],
     variants: ["18 inch", "20 inch"],
     description:
@@ -96,7 +96,7 @@ export const products = [
     category: "Earrings",
     price: 6999,
     currency: "INR",
-    image: "/images/earrings-3.jpg",
+    image: "https://placehold.co/400",
     metal: ["Silver"],
     variants: ["Standard"],
     description:
@@ -109,7 +109,7 @@ export const products = [
     category: "Bracelet",
     price: 28999,
     currency: "INR",
-    image: "/images/bracelet-2.jpg",
+    image: "https://placehold.co/400",
     metal: ["Gold"],
     variants: ["Medium", "Large"],
     description:
@@ -122,7 +122,7 @@ export const products = [
     category: "Necklace",
     price: 9999,
     currency: "INR",
-    image: "/images/necklace-3.jpg",
+    image: "https://placehold.co/400",
     metal: ["Silver"],
     variants: ["18 inch"],
     description:
@@ -135,7 +135,7 @@ export const products = [
     category: "Ring",
     price: 19999,
     currency: "INR",
-    image: "/images/ring-3.jpg",
+    image: "https://placehold.co/400",
     metal: ["Gold"],
     variants: ["Size 7", "Size 8", "Size 9"],
     description:
@@ -148,7 +148,7 @@ export const products = [
     category: "Bracelet",
     price: 13999,
     currency: "INR",
-    image: "/images/bracelet-3.jpg",
+    image: "https://placehold.co/400",
     metal: ["Silver"],
     variants: ["Adjustable"],
     description:
@@ -161,7 +161,7 @@ export const products = [
     category: "Earrings",
     price: 14999,
     currency: "INR",
-    image: "/images/earrings-4.jpg",
+    image: "https://placehold.co/400",
     metal: ["Silver"],
     variants: ["Standard"],
     description:
@@ -174,7 +174,7 @@ export const products = [
     category: "Necklace",
     price: 18999,
     currency: "INR",
-    image: "/images/necklace-4.jpg",
+    image: "https://placehold.co/400",
     metal: ["Gold"],
     variants: ["18 inch"],
     description:
@@ -187,7 +187,7 @@ export const products = [
     category: "Ring",
     price: 5999,
     currency: "INR",
-    image: "/images/ring-4.jpg",
+    image: "https://placehold.co/400",
     metal: ["Silver"],
     variants: ["Size 6", "Size 7", "Size 8"],
     description:
@@ -200,7 +200,7 @@ export const products = [
     category: "Earrings",
     price: 16999,
     currency: "INR",
-    image: "/images/earrings-5.jpg",
+    image: "https://placehold.co/400",
     metal: ["Gold"],
     variants: ["Small", "Medium"],
     description:
@@ -213,7 +213,7 @@ export const products = [
     category: "Bracelet",
     price: 20999,
     currency: "INR",
-    image: "/images/bracelet-4.jpg",
+    image: "https://placehold.co/400",
     metal: ["Silver"],
     variants: ["One Size"],
     description:
@@ -226,7 +226,7 @@ export const products = [
     category: "Necklace",
     price: 32999,
     currency: "INR",
-    image: "/images/necklace-5.jpg",
+    image: "https://placehold.co/400",
     metal: ["Gold"],
     variants: ["18 inch"],
     description:
@@ -239,7 +239,7 @@ export const products = [
     category: "Ring",
     price: 17999,
     currency: "INR",
-    image: "/images/ring-5.jpg",
+    image: "https://placehold.co/400",
     metal: ["Gold"],
     variants: ["Size 7", "Size 8"],
     description:
@@ -252,7 +252,7 @@ export const products = [
     category: "Necklace",
     price: 10999,
     currency: "INR",
-    image: "/images/necklace-6.jpg",
+    image: "https://placehold.co/400",
     metal: ["Silver"],
     variants: ["18 inch"],
     description:
@@ -260,3 +260,16 @@ export const products = [
     inStock: true,
   },
 ];
+
+export type Product = {
+  id: string;
+  name: string;
+  category: string;
+  price: number;
+  currency: string;
+  image: string;
+  metal: string[];
+  variants: string[];
+  description: string;
+  inStock: boolean;
+};

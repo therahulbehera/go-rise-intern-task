@@ -64,8 +64,8 @@ const Product = ({ prodId }: { prodId: string }) => {
               </tr>
             </tbody>
           </table>
-          <div>
-            <div className="flex justify-start items-center">
+          <div className="w-full">
+            <div className="flex flex-wrap justify-start items-center">
               {variants.map((v: string) => {
                 const isSelected = variant == v;
 

@@ -45,7 +45,10 @@ const Product = ({ prodId }: { prodId: string }) => {
           />
         </div>
         <div className="flex flex-col gap-4 md:gap-20 justify-between w-full">
-          <span className="text-4xl">₹{price}</span>
+          <div>
+            <span className="text-2xl hidden md:block">{name}</span>
+            <span className="text-4xl">₹{price}</span>
+          </div>
           <span className="text-justify">{description}</span>
           <div></div>
           <table className="table-auto w-full border ">

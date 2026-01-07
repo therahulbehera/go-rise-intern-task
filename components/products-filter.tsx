@@ -72,8 +72,8 @@ const ProductsFilter = () => {
       <Button
         className="w-full md:w-20"
         onClick={() => {
-          setMinPrice(undefined);
-          setMaxPrice(undefined);
+          setMinPrice("");
+          setMaxPrice("");
           setMetal("");
           setCategory("");
           router.push("/products");

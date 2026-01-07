@@ -1,11 +1,13 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
-import React from "react";
+import React, { useState } from "react";
 import { Spinner } from "./ui/spinner";
 import Image from "next/image";
+import { Button } from "./ui/button";
 
 const Product = ({ prodId }: { prodId: string }) => {
+  const [variant, setVariant] = useState("");
   const { isFetching, isFetched, data } = useQuery({
     queryKey: ["product", prodId],
     queryFn: async ({ queryKey }) => {
@@ -30,19 +32,19 @@ const Product = ({ prodId }: { prodId: string }) => {
       data?.data;
 
     return (
-      <section className="w-9/12 flex flex-col md:flex-row justify-center items-center gap-4 m-auto py-8">
+      <section className="w-9/12 h-full flex flex-col md:flex-row justify-center items-center gap-10 m-auto py-8">
         <div className="w-full h-full">
-          <span className="text-xl w-full md:hidden">{name}</span>
+          <span className="text-xl h-full w-full md:hidden">{name}</span>
           <Image
             src={image}
             alt={""}
             width={400}
             height={400}
             unoptimized
-            className="w-full h-auto"
+            className="w-full h-full my-2"
           />
         </div>
-        <div className="flex flex-col gap-4 grow">
+        <div className="flex flex-col gap-4 md:gap-20 justify-between w-full">
           <span className="text-4xl">₹{price}</span>
           <span className="text-justify">{description}</span>
           <div></div>
@@ -62,6 +64,25 @@ const Product = ({ prodId }: { prodId: string }) => {
               </tr>
             </tbody>
           </table>
+          <div>
+            <div className="flex justify-start items-center">
+              {variants.map((v: string) => {
+                const isSelected = variant == v;
+
+                return (
+                  <Button
+                    key={v}
+                    className="mr-2 my-2 p-8 w-40"
+                    onClick={() => setVariant(v)}
+                    variant={isSelected ? "outline" : "default"}
+                  >
+                    {v}
+                  </Button>
+                );
+              })}
+            </div>
+            <Button className="w-full p-8 bg-green-500">Add to Cart</Button>
+          </div>
         </div>
       </section>
     );

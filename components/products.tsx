@@ -6,16 +6,20 @@ import { Card } from "./card";
 import { Product } from "@/lib/products";
 import { useQuery } from "@tanstack/react-query";
 import { Spinner } from "./ui/spinner";
+import { useSearchParams } from "next/navigation";
 
 const Products = () => {
+  const searchParams = useSearchParams();
+
+  const query = searchParams.toString();
+
   const { isFetching, data, isFetched } = useQuery({
-    queryKey: ["products"],
+    queryKey: ["products", query],
     queryFn: async () => {
-      const res = await fetch("/api/products");
+      const res = await fetch(`/api/products?${query}`);
       if (!res.ok) throw new Error("Fetch failed");
       return res.json();
     },
-    staleTime: 5 * 60 * 1000,
   });
 
   if (isFetching)

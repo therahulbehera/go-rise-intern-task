@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Product Listing Application
 
-## Getting Started
+## Overview
 
-First, run the development server:
+This project is a product listing application built as part of an interview task.
+It demonstrates frontend–backend integration, filtering, and data fetching with caching using a modern React and Next.js stack.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Tech Stack
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Next.js** – Full-stack React framework used for both frontend and backend
+- **React Query (TanStack Query)** – Data fetching, caching, and synchronization
+- **Tailwind CSS** – Utility-first styling
+- **Radix UI (shadcn/ui)** – Accessible UI primitives
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Endpoints
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `GET /api/products`
+  Returns the list of products.
+  Supports query parameters for filtering such as price range, category, and metal type.
 
-## Learn More
+- `GET /api/products/[id]`
+  Returns details for a single product based on its ID.
 
-To learn more about Next.js, take a look at the following resources:
+## Frontend–Backend Integration
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Next.js is used as a unified framework for both frontend and backend, which simplifies integration and reduces overhead.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- API routes are implemented using Next.js route handlers.
+- The frontend consumes these APIs using **React Query**.
+- React Query caches responses to avoid unnecessary server requests.
+- Since the product data is mostly static, caching significantly improves performance and reduces server load.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+The application is deployed on **Vercel**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Reason:
+
+- Native support for Next.js
+- Automatic builds and optimizations
+- Seamless handling of API routes and static assets
+
+## Improvements With More Time
+
+With additional time, the following improvements would be made:
+
+1. **UX improvements**
+
+   - Better empty states
+   - Improved filter interactions
+   - Loading skeletons instead of spinners
+
+2. **UI enhancements**
+
+   - Polished layout and visual hierarchy
+   - Better responsiveness and accessibility refinements
+
+3. **Performance and SEO**
+
+   - Use **Static Site Generation (SSG)** where possible
+   - Use **Server-Side Rendering (SSR)** for SEO-critical pages
+   - Faster initial page loads and improved search engine visibility
+
+4. **State Management**
+
+   - Introduce **Redux** for global state management
+   - Handle cart state and user-related state in a scalable way
